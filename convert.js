@@ -36,9 +36,15 @@ function convert(source, target){
 }
 
 //checking arguments
+// You parse the string twice using `parseFloat`. This uses an unnecessary amount of CPU time.
+// Remember the rule: Don't repeat yourself. Try to avoid doing the same thing or very similar things
+// multiple times. That makes your program faster and shorter.
 if(!isNaN(parseFloat(process.argv[2]))){
     value = parseFloat(process.argv[2]);
-}else{handleArguments();}
+}else{
+    // Please format your code (e.g. with VSCode) before checking code in. You should at least have appropriate
+    // whitespaces e.g. in front of `}`.
+    handleArguments();}
 sourceUnit = process.argv[3];
 if(process.argv[4] !== 'to') handleArguments();
 targetUnit = process.argv[5];
